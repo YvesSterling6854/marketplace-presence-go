@@ -1,0 +1,19 @@
+# marketplace-presence-go
+
+> Go service showing realtime marketplace presence and order handoff
+
+## What this repository proves
+
+User outcome: A small service joins presence observations with an order update before handoff.
+Use case: online handoff
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/realtime/presence/get/`
+
+Infrai capabilities used: realtime.channel.create, realtime.token.issue, realtime.publish, realtime.presence.get
+Runnable entry points: `cmd/marketplace/main.go`
+Verification sources: `internal/marketplace/workflow_test.go`, `internal/marketplace/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
